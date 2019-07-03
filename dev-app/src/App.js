@@ -8,13 +8,16 @@ class App extends React.Component {
 	constructor(props) {
     super(props);
     // stateを定義 オブジェクト形式で入れられる
-    this.state = {name:'やまだたろう'}
-
+    this.state = {name:'やまだたろう',count:0}
   }
 
-	// Stateを変更するためのメソッドを定義
-  handleClick(name){
+	// State の nameを変更するためのメソッドを定義
+  nameChange(name){
     this.setState({name: name});
+  }
+	// State の countを変更するためのメソッドを定義
+	countUp(){
+    this.setState({count: this.state.count +1 });
   }
 
 	// JSXを戻り値とするrenderメソッド
@@ -25,10 +28,15 @@ class App extends React.Component {
 			<div>
         {/* {} で js が使えるので、その中で /* でコメントが使える */}
         <h1>{this.state.name}</h1>
-				 <button onClick={()=>{this.handleClick('やまだたろう')}}>やまだたろう</button>
-				 <button onClick={()=>{this.handleClick('すずきはなこ')}}>すずきはなこ</button>
+				<div className="nav">
+				 <button className="btn btn-primary" onClick={() => {this.nameChange('やまだたろう')}}>やまだたろう</button>
+				 <button className="btn btn-primary" onClick={() => {this.nameChange('すずきはなこ')}}>すずきはなこ</button>
+				 </div>
 				{/* 画像の末尾は / がないとエラーになる */}
 				<img src={logo} className="App-logo" alt="logo" />
+
+				<h1>{this.state.count}</h1>
+				 <button onClick={() => {this.countUp()}}>+</button>
       </div>
     );
   }
