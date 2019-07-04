@@ -27,16 +27,28 @@ class App extends React.Component {
     return (
 			<div>
         {/* {} で js が使えるので、その中で /* でコメントが使える */}
-        <h1>{this.state.name}</h1>
-				<div className="nav">
-				 <button className="btn btn-primary" onClick={() => {this.nameChange('やまだたろう')}}>やまだたろう</button>
-				 <button className="btn btn-primary" onClick={() => {this.nameChange('すずきはなこ')}}>すずきはなこ</button>
-				 </div>
+				<div class="container">
 				{/* 画像の末尾は / がないとエラーになる */}
+
 				<img src={logo} className="App-logo" alt="logo" />
 
-				<h1>{this.state.count}</h1>
-				 <button onClick={() => {this.countUp()}}>+</button>
+				<div className="text-center mb-5">
+        <h2>{this.state.name}</h2>
+				<p>ボタンを押すと上の名前がかわります</p>
+				<div className="btn-group" role="group" aria-label="Basic example">
+				 <button className="btn btn-primary" onClick={() => {this.nameChange('やまだたろう')}}>やまだたろう</button>
+				 <button className="btn btn-primary" onClick={() => {this.nameChange('すずきはなこ')}}>すずきはなこ</button>
+				</div>
+				</div>
+
+
+
+				<div className="text-center">
+				<h2>カウントアップ</h2>
+				<h3>{this.state.count}</h3>
+				 <button className="btn btn-primary" onClick={() => {this.countUp()}}>+</button>
+				</div>
+				</div>
       </div>
     );
   }
