@@ -1,5 +1,6 @@
 // Reactの読み込み
 import React from 'react';
+import Header from './components/flame/Header';
 import NameChange from './NameChange';
 import CountUp from './CountUp';
 import StaffMap from './StaffMap';
@@ -14,12 +15,7 @@ class App extends React.Component {
 
     return (
 			<div>
-			<nav className="navbar navbar-light bg-light">
-			  <a className="navbar-brand" href="#">
-			    <img src="/images/logo.svg" width="35" height="35" className="d-inline-block align-top" alt="" />
-			    React & Bootstrap
-			  </a>
-			</nav>
+			<Header />
         {/* {} で js が使えるので、その中で /* でコメントが使える */}
 				<div className="container">
 				{/* 画像の末尾は / がないとエラーになる */}
@@ -31,6 +27,7 @@ class App extends React.Component {
 				<CountUp />
 
 				<StaffMap />
+
 				<StaffStatic />
 
 				</div>
