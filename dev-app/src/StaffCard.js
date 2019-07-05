@@ -3,7 +3,7 @@ import React from 'react';
 class StaffCard extends React.Component{
   render(){
     return (
-			<div className={`card border-${this.props.color}`}>
+			<div className={`card border-${this.props.color}`} key={this.props.id}>
 			  <img src={this.props.image} className="card-img" alt="..." />
 			  <div className="card-body">
 			    <h5 className="card-title">{this.props.name}</h5>
