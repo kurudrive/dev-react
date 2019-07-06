@@ -11,7 +11,6 @@ class App extends React.Component {
 
 	// JSXを戻り値とするrenderメソッド
   render() {
-		// ここは普通のjsなのでコメント書けます
 
     return (
 			<div>

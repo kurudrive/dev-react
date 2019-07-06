@@ -15,6 +15,10 @@ class CountUp extends React.Component{
   }
 
 	render(){
+
+		// ここは普通のjsなのでコメント書けます
+		console.log(this.state.count);
+		//
     return (
 			<div className="text-center mb-5">
 			<h2>カウントアップ</h2>

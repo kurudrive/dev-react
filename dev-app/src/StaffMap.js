@@ -3,18 +3,6 @@ import StaffCard from './StaffCard';
 
 class StaffMap extends React.Component{
 
-	// constructorは読み込まれたらとりあえず実行される部分
-	constructor(props) {
-    super(props);
-    // stateを定義 オブジェクト形式で入れられる
-    this.state = {count:0}
-  }
-
-	// State の countを変更するためのメソッドを定義
-	countUp(){
-    this.setState({count: this.state.count +1 });
-  }
-
 	render(){
 
 		const staffList = [
@@ -43,6 +31,7 @@ class StaffMap extends React.Component{
 				{staffList.map((staffItem) => {
 				return (
 					<StaffCard
+					id = {staffItem.id}
 					name = {staffItem.name}
 					image = {staffItem.image}
 					color = {staffItem.color}
