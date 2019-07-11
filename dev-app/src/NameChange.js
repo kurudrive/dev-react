@@ -14,6 +14,19 @@ class NameChange extends React.Component{
     this.setState({name: name});
   }
 
+	// コンポーネント生成時
+  componentDidMount() {
+		console.log('コンポーネント生成時');
+  }
+  // コンポーネント更新時
+  componentDidUpdate() {
+		console.log('コンポーネント更新時');
+  }
+  //コンポーネント消滅時
+  componentWillUnmount() {
+		console.log('コンポーネント消滅時');
+  }
+
 	render(){
     return (
 			<div className="text-center mb-5">

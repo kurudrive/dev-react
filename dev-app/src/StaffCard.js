@@ -8,6 +8,7 @@ class StaffCard extends React.Component{
   //   // stateを定義 オブジェクト形式で入れられる
   //   this.state = {isModalOpen:false}
   // }
+
 	//
 	// // スタッフをクリックされた時の処理
 	// handleClickStaff(){
