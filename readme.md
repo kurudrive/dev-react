@@ -60,6 +60,19 @@ $ cd helloworld
 $ yarn start
 ```
 
-次回
+## ウェブサイトに埋め込み
+
+該当のアプリをターミナルで開き
+
+```
+npm run build
+```
+
+で build ディレクトリが出来るので、その中身をウェブサーバー公開ルートに入れれば使える
+
+---
+
+## 次回
+
 https://qiita.com/rspmharada7645/items/dd794478e593c3d7d3f2
 https://webkikaku.co.jp/blog/javascript/react-start/
