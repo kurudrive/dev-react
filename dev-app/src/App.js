@@ -5,6 +5,7 @@ import NameChange from './components/NameChange';
 import CountUp from './components/CountUp';
 import StaffMap from './components/StaffMap';
 import StaffStatic from './components/StaffStatic';
+import ToDo from './components/ToDo';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -13,7 +14,7 @@ class App extends React.Component {
 	constructor(props) {
     super(props);
     // stateを定義 オブジェクト形式で入れられる
-    this.state = {currentPage:'logo'}
+    this.state = {currentPage:'toDo'}
   }
 
 	// State の pageを変更するためのメソッドを定義
@@ -44,8 +45,11 @@ class App extends React.Component {
 				<StaffStatic />
 				</div>
 			);
+		} else if ( this.state.currentPage === 'toDo' ){
+			appPage = (
+				<ToDo />
+			);
 		}
-
 
     return (
 			<div>
@@ -59,6 +63,7 @@ class App extends React.Component {
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('nameChange')}}>NameChange</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('countUp')}}>CountUp</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('staff')}}>Staff</button>
+				 <button className="btn btn-primary" onClick={() => {this.pageChange('toDo')}}>ToDo</button>
 				</div>
 			</nav>
         {/* {} で js が使えるので、その中で /* でコメントが使える */}
@@ -68,7 +73,6 @@ class App extends React.Component {
 				{appPage}
 
 				</div>
-
 
       </div>
     );
