@@ -75,4 +75,3 @@ npm run build
 ## 次回
 
 https://qiita.com/rspmharada7645/items/dd794478e593c3d7d3f2
-https://webkikaku.co.jp/blog/javascript/react-start/

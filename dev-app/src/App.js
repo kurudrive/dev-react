@@ -17,7 +17,7 @@ class App extends React.Component {
     this.state = {currentPage:'toDo'}
   }
 
-	// State の pageを変更するためのメソッドを定義
+	// State の pageを変更するためのメソッド pageChange を定義
   pageChange(page){
     this.setState({currentPage: page});
   }
@@ -25,7 +25,9 @@ class App extends React.Component {
 	// JSXを戻り値とするrenderメソッド
   render() {
 
+		// 変数 appPageをとりあえず定義
 		let appPage;
+		// 以下の条件分岐で appPage に入る内容を切り替える
 		if ( this.state.currentPage === 'logo' ){
 			appPage = (
 				<img src={logo} className="App-logo" alt="logo" />
@@ -59,6 +61,8 @@ class App extends React.Component {
 			    React & Bootstrap
 			  </a>
 				<div className="btn-group" role="group" aria-label="Basic example">
+				{/* {} で js が使えるので、その中で /* でコメントが使える */}
+				{/* クリックされたら this.state.currentPage の内容が 引数になり、それにより {appPage} の内容も変更される */}
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('logo')}}>Logo</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('nameChange')}}>NameChange</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('countUp')}}>CountUp</button>
@@ -66,7 +70,6 @@ class App extends React.Component {
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('toDo')}}>ToDo</button>
 				</div>
 			</nav>
-        {/* {} で js が使えるので、その中で /* でコメントが使える */}
 				<div className="container text-center pt-5">
 				{/* 画像の末尾は / がないとエラーになる */}
 

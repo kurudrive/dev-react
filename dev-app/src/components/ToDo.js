@@ -5,18 +5,22 @@ export default class ToDo extends React.Component{
 	// constructorは読み込まれたらとりあえず実行される部分
 	constructor(props) {
     super(props);
+
+		// stateを定義
     this.state = {
-      todos: [],
+      todos: [], // 出力時にループする
       name: ''
     };
   }
 
+	// 入力された内容 e で...
 	onInput = (e) => {
     this.setState({
       name: e.target.value
     });
   }
 
+	//
 	addTodo = () => {
     const { todos, name } = this.state;
     this.setState({

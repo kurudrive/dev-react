@@ -16,7 +16,7 @@ class CountUp extends React.Component{
 
 	render(){
 
-		// ここは普通のjsなのでコメント書けます
+		// ここは普通のjsなのでコメント書けます（ return()の中だと{}が必要 ）
 		console.log(this.state.count);
 		//
     return (

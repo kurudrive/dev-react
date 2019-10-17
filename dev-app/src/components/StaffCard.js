@@ -2,6 +2,9 @@ import React from 'react';
 
 class StaffCard extends React.Component{
 
+	// コメントはReactでモーダルの状態管理をする場合（たぶん）
+	// Bootstrapのjsで処理していて使っていないのでコメントアウトしている
+
 	// constructorは読み込まれたらとりあえず実行される部分
 	// constructor(props) {
   //   super(props);

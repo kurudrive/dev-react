@@ -14,15 +14,15 @@ class NameChange extends React.Component{
     this.setState({name: name});
   }
 
-	// コンポーネント生成時
+	// コンポーネント生成時（ constructor のようにもともとあるメソッドっぽい ）
   componentDidMount() {
 		console.log('コンポーネント生成時');
   }
-  // コンポーネント更新時
+  // コンポーネント更新時（ constructor のようにもともとあるメソッドっぽい ）
   componentDidUpdate() {
 		console.log('コンポーネント更新時');
   }
-  //コンポーネント消滅時
+  //コンポーネント消滅時（ constructor のようにもともとあるメソッドっぽい ）
   componentWillUnmount() {
 		console.log('コンポーネント消滅時');
   }
