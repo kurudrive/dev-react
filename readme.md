@@ -13,10 +13,13 @@ $ nodebrew ls
 ```
 
 使いたいバージョンを選ぶ
-このリポジトリでは v10.15.0
+このリポジトリでは v10系
 
 ```
+// Mac で nodebrew使用の時
 $ nodebrew use v10.15.0
+// Win で nvm-windows使用の時
+$ nvm use v10.17.0
 ```
 
 #### yarn
