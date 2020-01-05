@@ -16,6 +16,7 @@ export default class ToDo extends React.Component{
 	// 入力された内容 e で...
 	onInput = (e) => {
     this.setState({
+      // とりあえず state の name に入力された値を入れておく
       name: e.target.value
     });
   }
@@ -24,13 +25,17 @@ export default class ToDo extends React.Component{
 	addTodo = () => {
     const { todos, name } = this.state;
     this.setState({
+      // 配列 todos の項目に state に格納してあった name を追加 
       todos: [...todos, name]
     });
   }
 
+  // 削除する番号 index を受け取る
 	removeTodo = (index) => {
     const { todos, name } = this.state;
     this.setState({
+      // 0から押された項目（index）まで と 押された項目の次（ndex + 1）以降の項目を結合
+      // つまり押された項目のみ削除
       todos: [...todos.slice(0, index), ...todos.slice(index + 1)]
     });
   }
