@@ -3,9 +3,11 @@ import React from 'react';
 // import Header from './components/flame/Header';
 import NameChange from './components/NameChange';
 import CountUp from './components/CountUp';
+import CountUpMulti from './components/CountUpMulti';
 import StaffMap from './components/StaffMap';
 import StaffStatic from './components/StaffStatic';
 import ToDo from './components/ToDo';
+import Questionnaire from './components/Questionnaire';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -14,7 +16,7 @@ class App extends React.Component {
 	constructor(props) {
     super(props);
     // stateを定義 オブジェクト形式で入れられる
-    this.state = {currentPage:'toDo'}
+    this.state = {currentPage:'countUpMulti'}
   }
 
 	// State の pageを変更するためのメソッド pageChange を定義
@@ -40,6 +42,10 @@ class App extends React.Component {
 			appPage = (
 				<CountUp />
 			);
+		} else if ( this.state.currentPage === 'countUpMulti' ){
+			appPage = (
+				<CountUpMulti />
+			);
 		} else if ( this.state.currentPage === 'staff' ){
 			appPage = (
 				<div>
@@ -51,10 +57,14 @@ class App extends React.Component {
 			appPage = (
 				<ToDo />
 			);
+		} else if ( this.state.currentPage === 'questionnaire' ){
+			appPage = (
+				<Questionnaire />
+			);
 		}
 
     return (
-			<div>
+		<div>
 			<nav className="navbar navbar-light bg-light">
 			  <a className="navbar-brand" href="/">
 			    <img src="/images/logo.svg" width="35" height="35" className="d-inline-block align-top" alt="" />
@@ -66,18 +76,20 @@ class App extends React.Component {
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('logo')}}>Logo</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('nameChange')}}>NameChange</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('countUp')}}>CountUp</button>
+				 <button className="btn btn-primary" onClick={() => {this.pageChange('countUpMulti')}}>CountUpMulti</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('staff')}}>Staff</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('toDo')}}>ToDo</button>
+				 <button className="btn btn-primary" onClick={() => {this.pageChange('questionnaire')}}>Questionnaire</button>
 				</div>
 			</nav>
-				<div className="container text-center pt-5">
-				{/* 画像の末尾は / がないとエラーになる */}
+			<div className="container text-center pt-5">
+			{/* 画像の末尾は / がないとエラーになる */}
 
-				{appPage}
+			{appPage}
 
-				</div>
+			</div>
 
-      </div>
+      	</div>
     );
   }
 }

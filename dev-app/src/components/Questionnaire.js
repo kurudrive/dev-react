@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ToDo extends React.Component{
+export default class Questionnaire extends React.Component{
 
 	// constructorは読み込まれたらとりあえず実行される部分
 	constructor(props) {
@@ -16,7 +16,6 @@ export default class ToDo extends React.Component{
 	// 入力された内容 e で...
 	onInput = (e) => {
     this.setState({
-      // とりあえず state の name に入力された値を入れておく
       name: e.target.value
     });
   }
@@ -25,20 +24,22 @@ export default class ToDo extends React.Component{
 	addTodo = () => {
     const { todos, name } = this.state;
     this.setState({
-      // 配列 todos の項目に state に格納してあった name を追加 
       todos: [...todos, name]
     });
   }
 
-  // 削除する番号 index を受け取る
 	removeTodo = (index) => {
-    const { todos } = this.state;
+    const { todos, name } = this.state;
     this.setState({
-      // 0から押された項目（index）まで と 押された項目の次（ndex + 1）以降の項目を結合
-      // つまり押された項目のみ削除
       todos: [...todos.slice(0, index), ...todos.slice(index + 1)]
     });
   }
+
+  countUp() {
+    // this.setState({ count: this.state.count + 1 });
+  }
+
+
 
 	render(){
 		const { todos } = this.state;
@@ -52,9 +53,20 @@ export default class ToDo extends React.Component{
 			</div>
 
       <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Count</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 			<tbody>
         {todos.map((todo, index) => <tr key={index}>
 				<td>{todo}</td>
+        <td className="text-right">
+				<button className="btn btn-primary" onClick={() => { this.countUp(index) }}>+</button>
+				</td>
 				<td className="text-right">
 				<button className="btn btn-danger" onClick={() => { this.removeTodo(index) }}>削除</button>
 				</td>
