@@ -16,7 +16,7 @@ class App extends React.Component {
 	constructor(props) {
     super(props);
     // stateを定義 オブジェクト形式で入れられる
-    this.state = {currentPage:'countUpMulti'}
+    this.state = {currentPage:'questionnaire'}
   }
 
 	// State の pageを変更するためのメソッド pageChange を定義

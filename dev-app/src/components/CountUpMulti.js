@@ -21,9 +21,6 @@ class CountUpMulti extends React.Component {
   }
 
   // State の countを変更するためのメソッドを定義
-  countUp() {
-    this.setState({ count: this.state.count + 1 });
-  }
   itemCountUp(index) {
     const { items }  = this.state;
     // const abc = 
