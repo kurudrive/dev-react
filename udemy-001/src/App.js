@@ -3,39 +3,31 @@
 // class　コンポーネントだと Component を使ってないのでビルド時に warning が出るので読み込まない
 import React from 'react';
 
-// classコンポーネント
-// class App extends Component{
-//   render() {
-//     // const greeting = "Hi";
-//     // const dom = <div><h1 className="foo">{greeting}</h1></div>;
-//     // return dom;
-//     // return <input type="text" onClick={() => { console.log('aaa') }} />;
-//     // return <input type="text" onChange={() => { console.log('aaa') }} />; 
-//     return (
-//       // React.Fragment で外側のタグを省略できる
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onChange={() => { console.log('aaa') }} />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
-// 関数コンポーネント
 const App = () => {
+  const profiles = [
+    { name: "Taro", age: 10 },
+    { name: "花子", age: 12 },
+    { name: "瑛太" },
+  ]
   return (
     <div>
-    <Cat />
-    <Cat />
-    <Cat />
-    <Cat />
+      {
+        profiles.map((profile, index) => {
+          return  <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
+   
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>にゃー</div>
+const User = (props) => {
+return <div>よう！ 俺は {props.name} だぜ！ {props.age}歳だよ！</div>
 }
 
+// Props がない場合のデフォルト値を設定できる
+User.defaultProps = {
+  age:1
+}
 
 export default App;
