@@ -1,5 +1,4 @@
 // import React, { Component } from 'react';
-
 // class　コンポーネントだと Component を使ってないのでビルド時に warning が出るので読み込まない
 import React from 'react';
 
@@ -21,6 +20,7 @@ const App = () => {
   )
 }
 
+// props は コンポーネントの属性
 const User = (props) => {
 return <div>よう！ 俺は {props.name} だぜ！ {props.age}歳だよ！</div>
 }
