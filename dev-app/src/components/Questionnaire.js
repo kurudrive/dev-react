@@ -40,7 +40,7 @@ export default class Questionnaire extends React.Component{
     });
   }
 
-    // 削除する番号 index を受け取る
+  // 削除する番号 index を受け取る
 	removeItem = (index) => {
     const { items } = this.state;
     this.setState({
