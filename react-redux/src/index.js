@@ -10,7 +10,6 @@ import reducer from './reducers'
 import App from './components/App';
 import './index.css';
 
-
 import * as serviceWorker from './serviceWorker';
 
 // storeを作成

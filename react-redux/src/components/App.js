@@ -1,5 +1,8 @@
 import React from "react";
+// connect関数をインポート
+// connect 関数を使用して state action componet の関連付けをして処理する
 import { connect } from 'react-redux'
+// アクション関数をインポート
 import { increment, decrement } from '../actions'
 
 class App extends React.Component {
@@ -29,8 +32,17 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ value: state.count.value} )
+/*
+mapStateToProps
+stateの情報からこのcomponentに必要なものを取り出してcomponent内のpropsとしてマッピングする機能を持つ関数
+引数には状態のトップレベルを示すstateを書いてどういったオブジェクトをpropsとして対応させるのかを関数の戻り値として定義
+*/
+const mapStateToProps = state => ({ value: state.count.value } )
 
+/*
+mapDispatchToProps
+dispatch関数 : あるアクションが発生した時にReducerにタイプに応じた状態遷移を実行させる
+*/
 
 // const mapDispatchToProps = dispatch => ({
 //   increment: () => dispatch(increment()),
