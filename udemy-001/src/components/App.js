@@ -1,41 +1,43 @@
-// import React, { Component } from 'react';
-// class　コンポーネントだと Component を使ってないのでビルド時に warning が出るので読み込まない
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from 'react-redux'
+import { increment, decrement } from '../actions'
 
-const App = () => {
-  const profiles = [
-    { name: "Taro", age: 10 },
-    { name: "花子", age: 12 },
-    { name: 2 },
-  ]
-  return (
-    <div>
-      {
-        profiles.map((profile, index) => {
-          return  <User name={profile.name} age={profile.age} key={index} />
-        })
-      }
-   
-    </div>
-  )
+class App extends React.Component {
+  // reducer で行うのでconstructorは読み込まれたらとりあえず実行される部分
+
+
+  render() {
+    const props = this.props
+    //
+    return (
+
+      <div className="text-center mb-5">
+        <h2>カウントアップ</h2>
+        <h3>value: {props.value}</h3>
+        <button
+          className="btn btn-primary"
+          onClick={props.increment}
+        >
+          +
+        </button>
+        <button 
+        className="btn btn-primary"
+        onClick={props.decrement}
+        >-</button>
+      </div>
+    );
+  }
 }
 
-// props は コンポーネントの属性
-const User = (props) => {
-return <div>よう！ 俺は {props.name} だぜ！ {props.age}歳だよ！</div>
-}
+const mapStateToProps = state => ({ value: state.count.value} )
 
-// Props がない場合のデフォルト値を設定できる
-// User.defaultProps = {
-//   age:1
-// }
 
-// 型チェック
-User.propTypes = {
-  name: PropTypes.string,
-  // .isRequired だと必須になる
-  age: PropTypes.number.isRequired
-}
+// const mapDispatchToProps = dispatch => ({
+//   increment: () => dispatch(increment()),
+//   decrement: () => dispatch(decrement())
+// })
+const mapDispatchToProps = ({ increment, decrement })
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
