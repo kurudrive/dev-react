@@ -81,12 +81,24 @@ npm run build
 
 ---
 
-## Redux について
+## Redux について ( react-redux )
+
+Rexuxとは
+
+* コンポーネントの階層が大きくなった時に容易に状態を共有する
 
 Reduxのパッケージのインストールが必要なのでreactの各プロジェクトのディレクトリに移動してインストールする
 
 ```
 yarn add redux react-redux
 ```
+
+actions : アプリケーションで何が起きたかのデータ
+reducers : アクションが発生した時にアクションに組み込まれたtypeに対して状態（state）をどう変化させるのか
+
+Reducer をもとに store を作る
+すべてのコンポーネントで store を使えるようにする
+
+
 
 
