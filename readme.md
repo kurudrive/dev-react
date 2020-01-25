@@ -100,5 +100,51 @@ Reducer をもとに store を作る
 すべてのコンポーネントで store を使えるようにする
 
 
+---
 
+### APIの仕様をcurlで確認する
 
+ターミナルで以下のようにAPIサーバーに対してリクエストを送ると応答する
+
+#### 全件取得
+```
+curl --request GET --url \
+'https://udemy-utils.herokuapp.com/api/v1/events?token=token123'
+```
+
+#### １番だけ取得してみる
+```
+curl --request GET --url \
+'https://udemy-utils.herokuapp.com/api/v1/events/1?token=token123'
+```
+
+#### データを作成する POST
+
+POST で json のデータを送る
+```
+curl --request POST \
+--url 'https://udemy-utils.herokuapp.com/api/v1/events?token=token123' \
+--header 'Content-Type: application/json' \
+--data '{
+	"title": "event11",
+	"body": "body for event 11"
+}'
+```
+
+#### データを更新する PUT
+```
+curl --request PUT \
+--url 'https://udemy-utils.herokuapp.com/api/v1/events/1?token=token123' \
+--header 'Content-Type: application/json' \
+--data '{
+	"title": "変更したタイトル",
+	"body": "変更した内容"
+}'
+```
+
+#### データを削除する DELETE
+```
+curl --request DELETE \
+--url 'https://udemy-utils.herokuapp.com/api/v1/events/1?token=token123' \
+--header 'Content-Type: application/json'
+```
