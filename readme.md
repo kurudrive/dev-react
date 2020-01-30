@@ -148,3 +148,19 @@ curl --request DELETE \
 --url 'https://udemy-utils.herokuapp.com/api/v1/events/1?token=token123' \
 --header 'Content-Type: application/json'
 ```
+
+---
+
+# section5
+
+
+```
+# Reduxインストール
+yarn add redux react-redux
+
+# サーバーとのhttp通信を行うライブラリをプロジェクト内でインストール
+yarn add axios
+
+# Reduxのアクションクリエイターの非同期処理をするライブラリ
+yarn add redux-thunk
+```
