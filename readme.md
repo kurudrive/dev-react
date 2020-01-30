@@ -164,3 +164,7 @@ yarn add axios
 # Reduxのアクションクリエイターの非同期処理をするライブラリ
 yarn add redux-thunk
 ```
+
+https://github.com/reduxjs/redux-thunk
+
+redux-thunkを使うと、アクションクリエイターがアクションの代わりに関数を返す事が出来るようになる
