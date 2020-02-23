@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 // storeを作成するための関数 createStore をインポート
 import { createStore } from 'redux';
 // 作成したstoreを全コンポーネントにわたす Provider をインポート
-import { Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 // 作成した reducer をインポート
-import reducer from './reducers'
+import reducer from './reducers';
 // App コンポーネントをインポート
 import App from './components/App';
 import './index.css';

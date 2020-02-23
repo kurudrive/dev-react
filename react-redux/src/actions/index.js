@@ -1,4 +1,3 @@
-
 // 他でも使えるように定義しておく
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
