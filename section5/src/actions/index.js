@@ -12,5 +12,6 @@ const QUERYSTRING = '?token=token123'
 export const readEvents = () => async dispatch => {
 	const response = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`)
 	console.log(response)
+	// 応答で返ってきた response を dispatch で送る
 	dispatch({ type: READ_EVENTS, response })
 }
