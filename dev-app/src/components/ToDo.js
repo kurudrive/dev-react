@@ -34,8 +34,8 @@ export default class ToDo extends React.Component{
 	removeTodo = (index) => {
     const { todos } = this.state;
     this.setState({
-      // 0から押された項目（index）まで と 押された項目の次（ndex + 1）以降の項目を結合
-      // つまり押された項目のみ削除
+      // 0からクリックされた項目（index）まで と クリックされた項目の次（ndex + 1）以降の項目を結合
+      // つまりクリックされた項目のみ削除
       todos: [...todos.slice(0, index), ...todos.slice(index + 1)]
     });
   }

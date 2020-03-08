@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-// storeを作成するための関数 createStore をインポート
-import { createStore } from 'redux'
 // 作成したstoreを全コンポーネントにわたす Provider をインポート
 import { Provider } from 'react-redux'
+// storeを作成するための関数 createStore をインポート
+import { createStore } from 'redux'
 // 作成した reducer をインポート
 import reducer from './reducers/reducer'
 // App コンポーネントをインポート

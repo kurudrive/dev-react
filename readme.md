@@ -63,8 +63,9 @@ $ cd helloworld
 $ yarn start
 ```
 
-なにかエラーが出たらパッケージがなかったりするかもしれないのでとりあえず	 npm install
+なにかエラーが出たらパッケージがなかったりするかもしれないのでとりあえず npm install
 この時親ではなく dev-app のように子のプロジェクトで実行する
+
 ```
 $ npm install --save-dev
 ```
@@ -95,8 +96,9 @@ yarn add redux react-redux
 
 actions : アプリケーションで何が起きたかのデータ
 reducers : アクションが発生した時にアクションに組み込まれたtypeに対して状態（state）をどう変化させるのか
-
-Reducer をもとに store を作る
+stateが更新されると自動的に再描画される
+stateはstoreが管理する
+Reducerをもとにstoreを作る
 すべてのコンポーネントで store を使えるようにする
 
 
