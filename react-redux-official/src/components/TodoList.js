@@ -16,18 +16,20 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 
-const TodoList = ({ todos, toggleTodo }) => (
+const TodoList = ({ todos, hoge }) => (
   <ul>
     { 
     // todosをtodoに入れながらループ
     }
     {todos.map(todo => (
       // クリックされたら toggleTodo() アクションに id を投げて実行
-      // key={todo.id} はTodoコンポーネントで使用していないがReactでmapする時はないとエラーになる
-      // ★ {...todo} 何やってんの？
-      // 配列に要素を追加できるようにするために...をつけてスプレッド演算子にしてるだけ？
-      // 既にスプレッド演算子じゃないの？
-      <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+	  // key={todo.id} はTodoコンポーネントで使用していないがReactでmapする時はないとエラーになる
+	  
+	  // {...todo} 何やってんの？
+	  // <Todo id={todo.id} text={todo.text} /> みたいにいい感じにしてくれる。
+      // 配列に要素を追加できるようにするために...をつけてスプレッド演算子にしてる
+    //   <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+      <Todo key={todo.id} {...todo} onClick={() => hoge(todo.id)} />
     ))}
   </ul>
 )
@@ -41,7 +43,7 @@ TodoList.propTypes = {
       text: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+  hoge: PropTypes.func.isRequired
 }
 
 export default TodoList

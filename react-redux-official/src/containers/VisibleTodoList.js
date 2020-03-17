@@ -49,7 +49,9 @@ mapDispatchToProps
 dispatch関数 : あるアクションが発生した時にReducerにタイプに応じた状態遷移を実行させる
 */
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  hoge: id => dispatch(toggleTodo(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
+
+// 参考 : https://github.com/torounit/redux-todo-study/blob/master/src/components/TodoList.js

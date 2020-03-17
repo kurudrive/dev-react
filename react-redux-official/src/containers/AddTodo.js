@@ -9,9 +9,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+// ★ import { useDispatch } from 'react-redux';
 
 const AddTodo = ({ dispatch }) => {
-  let input
+	// ★ const dispatch = useDispatch();
+  	let input
 
   return (
     <div>
@@ -25,7 +27,7 @@ const AddTodo = ({ dispatch }) => {
           if (!input.value.trim()) {
             return
           }
-
+		  // addTodo で返ってきたオブジェクトを dispach でreducerに送る
           // dispatch関数 : あるアクションが発生した時にReducerにタイプに応じた状態遷移を実行させる
           dispatch(addTodo(input.value))
 
@@ -35,7 +37,7 @@ const AddTodo = ({ dispatch }) => {
         }}
       >
         <input 
-        // ↓ ★これ何やってんの？
+		// node : 中のDOM → input に入れている
         ref={node => (input = node)} />
         <button type="submit">Add Todo</button>
       </form>
@@ -43,4 +45,6 @@ const AddTodo = ({ dispatch }) => {
   )
 }
 // connect()でReactコンポーネントとstoreをつなぐ
+// connect() さんがつなげてくれるから dispatch() が使えてる
 export default connect()(AddTodo)
+// ★ export default AddTodo;
