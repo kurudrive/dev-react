@@ -14,21 +14,29 @@ class App extends React.Component {
 
 	// constructorは読み込まれたらとりあえず実行される部分
 	constructor(props) {
-    super(props);
-    // stateを定義 オブジェクト形式で入れられる
-    this.state = {currentPage:'questionnaire'}
-  }
+
+		// super() はコンストラクタをオーバーライドする時は必ず必要
+		super(props);
+		// stateを定義 : オブジェクト形式で入れられる
+		// ここでは初期に表示するページ（コンテンツ）を指定
+		this.state = {currentPage:'questionnaire'}
+	}
 
 	// State の pageを変更するためのメソッド pageChange を定義
-  pageChange(page){
-    this.setState({currentPage: page});
-  }
+	pageChange(page){
+		this.setState({currentPage: page});
+	}
 
 	// JSXを戻り値とするrenderメソッド
-  render() {
+  	render() {
+
+		// render() 内で return() の前に準備するものをまずここに書く
+
+		// まず コンテンツの中身である appPage のDOMを作る。
 
 		// 変数 appPageをとりあえず定義
 		let appPage;
+
 		// 以下の条件分岐で appPage に入る内容を切り替える
 		if ( this.state.currentPage === 'logo' ){
 			appPage = (
