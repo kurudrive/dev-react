@@ -22,13 +22,20 @@ class CountUpMulti extends React.Component {
 
   // State の countを変更するためのメソッドを定義
   itemCountUp(index) {
+
+    // 呼び出された（クリックされた）らとりあえず items の値をstateから受け直し
     const { items }  = this.state;
+
     // const abc = 
     //   {
     //     name:'やまだ',
     //     count: 5,
     //   };
+
+    // カウントの値を加算
     items[index].count ++;
+
+    // state を上書きしなおし
     this.setState({ 
       // 配列自体を追加したい場合
       // items:[...items,abc]
@@ -37,8 +44,10 @@ class CountUpMulti extends React.Component {
   }
 
   render() {
+
     // ここは普通のjsなのでコメント書けます
 
+    // state の中の配列である items を取得
     const { items } = this.state;
    
     return (
@@ -55,6 +64,11 @@ class CountUpMulti extends React.Component {
           </tr>
         </thead>
         <tbody>
+        { /*  
+        map メソッドは新しい配列を作る...がここではループに使ってるだけ？
+        items の中の要素(map内で item に格納)には name と count が入っている。
+        indexは自動割り振り
+        */ }
         {items.map((item, index) => {
           return (
           // ループ項目の一番外側は key がないとエラー吐く
