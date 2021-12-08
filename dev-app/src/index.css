@@ -15,3 +15,11 @@ code {
 .App-logo {
 	width:150px;
 }
+
+.isClose {
+	display: none;
+  }
+  
+  .isOpen {
+	display: block;
+  }

@@ -8,6 +8,7 @@ import StaffMap from './components/StaffMap';
 import StaffStatic from './components/StaffStatic';
 import ToDo from './components/ToDo';
 import Questionnaire from './components/Questionnaire';
+import LessonUseState from './components/LessonUseState/LessonUseState';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -69,6 +70,10 @@ class App extends React.Component {
 			appPage = (
 				<Questionnaire />
 			);
+		} else if ( this.state.currentPage === 'lessonUseState' ){
+			appPage = (
+				<LessonUseState />
+			);
 		}
 
     return (
@@ -88,6 +93,16 @@ class App extends React.Component {
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('staff')}}>Staff</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('toDo')}}>ToDo</button>
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('questionnaire')}}>Questionnaire</button>
+				</div>
+			</nav>
+			<nav className="navbar navbar-light bg-light">
+			  <div className="navbar-brand" href="/">
+			    React hooks
+			  </div>
+				<div className="btn-group" role="group" aria-label="Basic example">
+				{/* {} で js が使えるので、その中で /* でコメントが使える */}
+				{/* クリックされたら this.state.currentPage の内容が 引数になり、それにより {appPage} の内容も変更される */}
+				 <button className="btn btn-primary" onClick={() => {this.pageChange('lessonUseState')}}>useState</button>
 				</div>
 			</nav>
 			<div className="container text-center pt-5">
