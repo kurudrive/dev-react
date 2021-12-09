@@ -9,6 +9,7 @@ import StaffStatic from './components/StaffStatic';
 import ToDo from './components/ToDo';
 import Questionnaire from './components/Questionnaire';
 import LessonUseState from './components/LessonUseState/LessonUseState';
+import LessonUseEffect from './components/LessonUseEffect/LessonUseEffect';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -74,6 +75,10 @@ class App extends React.Component {
 			appPage = (
 				<LessonUseState />
 			);
+		} else if ( this.state.currentPage === 'lessonUseEffect' ){
+			appPage = (
+				<LessonUseEffect />
+			);
 		}
 
     return (
@@ -103,6 +108,7 @@ class App extends React.Component {
 				{/* {} で js が使えるので、その中で /* でコメントが使える */}
 				{/* クリックされたら this.state.currentPage の内容が 引数になり、それにより {appPage} の内容も変更される */}
 				 <button className="btn btn-primary" onClick={() => {this.pageChange('lessonUseState')}}>useState</button>
+				 <button className="btn btn-primary" onClick={() => {this.pageChange('lessonUseEffect')}}>useEffect</button>
 				</div>
 			</nav>
 			<div className="container text-center pt-5">
